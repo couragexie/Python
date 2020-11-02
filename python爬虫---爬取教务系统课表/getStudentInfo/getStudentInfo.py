@@ -21,7 +21,7 @@ def getVerifiedCode():
     # 获取验证码对象
     verifiedNum = requests.get(link, headers = headers)
     #print('verified Cookie:{}'.format(verifiedNum.cookies.get_dict().get('JSESSIONID'))) #获取 cookies
-    # 存储验证码，转成 jpg, 无法智能识别，只能人脸识别
+    # 存储验证码，转成 jpg, 无法智能识别，只能人工识别
     file = open('verifiedCode.jpg', 'wb')
     file.write(verifiedNum.content)
     return verifiedNum
